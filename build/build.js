@@ -15,7 +15,8 @@ for(var i = 0; i < files.length; i++) {
     var file = files[i];
     var content = fs.readFileSync(src + file.filename, 'utf-8');
     var packed = 'data:text/html;base64, '+btoa(content);
-    template.push('<a target="_blank" href="' + packed + '">' + file.name + '</a>');
+//    template.push('<a target="_blank" href="' + packed + '">' + file.name + '</a>');
+    template.push('['+ file.name + ']('+packed+')');
 }
 
 fs.writeFileSync(rm, template.join('\n'), 'utf-8');
