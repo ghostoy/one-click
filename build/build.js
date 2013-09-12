@@ -14,7 +14,7 @@ var files = [{name: 'HTML Editor', filename: 'html.html'}];
 for(var i = 0; i < files.length; i++) {
     var file = files[i];
     var content = fs.readFileSync(src + file.filename, 'utf-8');
-    var packed = 'data:text/html;base64, '+btoa(content);
+    var packed = 'data:text/html;base64,'+btoa(content);
 //    template.push('<a target="_blank" href="' + packed + '">' + file.name + '</a>');
     template.push('['+ file.name + ']('+packed+')');
 }
